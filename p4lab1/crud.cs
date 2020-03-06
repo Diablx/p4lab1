@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 
-namespace ConsoleApplication3
+namespace p4lab1
 {
     public static class crud
     {
-        public static void Create(string regionDescription, SqlConnection conn)
+        public static void Create(SqlConnection conn)
         {
             string sql = "INSERT INTO northwind.dbo.Region(RegionId,RegionDescription) VALUES (5,'@regionName');";
-            var command = new SqlCommand(sql, conn);
-            command.Parameters.Add("regionName", regionDescription);
+            SqlCommand command = new SqlCommand(sql, conn);
 
             int a = command.ExecuteNonQuery();
             if (a > 0)

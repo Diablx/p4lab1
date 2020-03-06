@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
-namespace ConsoleApplication3
+namespace p4lab1
 {
     class Program
     {
@@ -13,11 +9,8 @@ namespace ConsoleApplication3
         {
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection conn = new SqlConnection(connectionString);
-
             conn.Open();
-
-           
-            crud.Create("śląsk", conn);
+            crud.Create(conn);
             crud.Read(conn);
         }
     }
