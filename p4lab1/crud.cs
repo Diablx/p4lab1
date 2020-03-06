@@ -9,7 +9,7 @@ namespace p4lab1
     {
         public static void Create(SqlConnection conn)
         {
-            string sql = "INSERT INTO northwind.dbo.Region(RegionId,RegionDescription) VALUES (5,'@regionName');";
+            string sql = "INSERT INTO dbo.Region(RegionId,RegionDescription) VALUES (5,'@regionName');";
             SqlCommand command = new SqlCommand(sql, conn);
 
             int a = command.ExecuteNonQuery();
@@ -23,7 +23,7 @@ namespace p4lab1
         {
             SqlCommand command = new SqlCommand
             {
-                CommandText = "SELECT * FROM Northwind.dbo.Customers",
+                CommandText = "SELECT * FROM dbo.Customers",
                 Connection = connect,
             };
 
